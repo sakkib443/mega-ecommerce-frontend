@@ -133,7 +133,7 @@ const ProductFormInner = () => {
         setFormData((prev: any) => ({ ...prev, tags }));
     };
 
-    const handleImagesChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleImagesChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         const urls = e.target.value.split('\n').map(url => url.trim()).filter(url => url !== '');
         setFormData((prev: any) => ({ ...prev, images: urls }));
     };
