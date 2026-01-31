@@ -18,6 +18,7 @@ import {
     FiUser,
     FiPackage,
     FiX,
+    FiClock,
 } from 'react-icons/fi';
 import {
     useGetAllReviewsQuery,
@@ -88,7 +89,7 @@ export default function ReviewsPage() {
     const [selectedReview, setSelectedReview] = useState<any>(null);
 
     const { data: reviewsData, isLoading, refetch } = useGetAllReviewsQuery({ page, limit: 10, status: statusFilter });
-    const { data: statsData, isStatsLoading } = useGetReviewStatsQuery(undefined);
+    const { data: statsData, isLoading: isStatsLoading } = useGetReviewStatsQuery(undefined);
 
     const [updateStatus] = useUpdateReviewStatusMutation();
     const [addReply] = useAddAdminReplyMutation();
