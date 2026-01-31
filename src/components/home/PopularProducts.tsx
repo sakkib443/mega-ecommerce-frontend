@@ -31,7 +31,7 @@ const filters = [
 ];
 
 const PopularProducts: React.FC = () => {
-    const [activeFilter, setActiveFilter] = useState('new');
+    const [activeFilter, setActiveFilter] = useState('all');
 
     const filteredProducts = activeFilter === 'all'
         ? demoProducts

@@ -61,7 +61,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         <Link href={`/product/${product.id}`}>
             <div className='group bg-white border border-gray-100 rounded-md overflow-hidden hover:shadow-2xl hover:shadow-gray-200/50 transition-all duration-500 relative flex flex-col h-full'>
                 {/* Image Container */}
-                <div className='relative aspect-[4/3] bg-gray-50/50 overflow-hidden p-8'>
+                <div className='relative aspect-[4/3] bg-gray-50/50 overflow-hidden'>
                     {/* Discount Badge */}
                     {discountText && (
                         <span className='absolute top-3 left-3 bg-[#EA4335] text-white text-[9px] font-black px-2 py-1 rounded-sm uppercase z-10 tracking-widest leading-none'>
@@ -70,16 +70,14 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
                     )}
 
                     {/* Product Image */}
-                    <div className='w-full h-full flex items-center justify-center'>
-                        <img
-                            src={product.image || 'https://images.unsplash.com/photo-1560393464-5c69a73c5770?q=80&w=800'}
-                            alt={product.name}
-                            className='max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-700'
-                            onError={(e) => {
-                                (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1560393464-5c69a73c5770?q=80&w=800';
-                            }}
-                        />
-                    </div>
+                    <img
+                        src={product.image || 'https://images.unsplash.com/photo-1560393464-5c69a73c5770?q=80&w=800'}
+                        alt={product.name}
+                        className='w-full h-full object-cover group-hover:scale-110 transition-transform duration-700'
+                        onError={(e) => {
+                            (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1560393464-5c69a73c5770?q=80&w=800';
+                        }}
+                    />
 
                     {/* Hover Actions */}
                     <div className='absolute top-3 right-3 flex flex-col gap-2 transform translate-x-12 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-500'>
