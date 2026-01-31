@@ -95,9 +95,9 @@ const ShipmentsTab = ({
                                     </td>
                                     <td className="px-6 py-4">
                                         <span className={`px-2.5 py-1 rounded-md text-[11px] font-bold capitalize border inline-flex items-center gap-1.5 ${shipment.status === 'delivered' ? 'bg-green-50 text-green-700 border-green-100' :
-                                                shipment.status === 'pending' ? 'bg-yellow-50 text-yellow-700 border-yellow-100' :
-                                                    shipment.status === 'cancelled' ? 'bg-red-50 text-red-700 border-red-100' :
-                                                        'bg-blue-50 text-blue-700 border-blue-100'
+                                            shipment.status === 'pending' ? 'bg-yellow-50 text-yellow-700 border-yellow-100' :
+                                                shipment.status === 'cancelled' ? 'bg-red-50 text-red-700 border-red-100' :
+                                                    'bg-blue-50 text-blue-700 border-blue-100'
                                             }`}>
                                             {shipment.status.replace('_', ' ')}
                                         </span>
@@ -281,7 +281,7 @@ const ZoneModal = ({ isOpen, onClose, onSubmit, editingZone }: { isOpen: boolean
                 <div className="px-6 py-4 border-t border-gray-100 flex justify-end gap-3 bg-gray-50/50">
                     <button onClick={onClose} className="px-4 py-2 text-sm font-bold text-gray-500 hover:text-gray-700 transition-colors">Cancel</button>
                     <button
-                        onClick={() => onSubmit({ name, areas: areas.split(',').map(a => a.trim()).filter(Boolean), isActive })}
+                        onClick={() => onSubmit({ name, areas: areas.split(',').map((a: string) => a.trim()).filter(Boolean), isActive })}
                         className="px-6 py-2 bg-[#5CAF90] text-white rounded-md text-sm font-bold shadow-md hover:bg-[#4A9A7D] transition-all"
                     >
                         Save Zone
@@ -485,7 +485,7 @@ export default function ShippingPage() {
         }
     };
 
-    const stats = statsData?.data || { pending: 0, inTransit: 0, delivered: 0, totalShipments: 0 };
+    const stats = statsData?.data || { pending: 0, inTransit: 0, delivered: 0, totalShipments: 0, avgDeliveryDays: 0 };
     const shipments = shipmentsData?.data || [];
     const zones = zonesData?.data || [];
     const rates = ratesData?.data || [];
@@ -576,8 +576,8 @@ export default function ShippingPage() {
                             key={tab.id}
                             onClick={() => setActiveTab(tab.id as any)}
                             className={`flex items-center gap-2 px-6 py-2 rounded-md text-sm font-semibold transition-all ${activeTab === tab.id
-                                    ? 'bg-[#5CAF90] text-white shadow-md'
-                                    : 'text-gray-500 hover:bg-gray-50'
+                                ? 'bg-[#5CAF90] text-white shadow-md'
+                                : 'text-gray-500 hover:bg-gray-50'
                                 }`}
                         >
                             <tab.icon size={16} />

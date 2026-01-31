@@ -98,7 +98,7 @@ const uiSlice = createSlice({
             state.isGlobalLoading = action.payload;
         },
 
-        showNotification: (state, action: PayloadAction<{ type: UIState['notification']['type']; message: string }>) => {
+        showNotification: (state, action: PayloadAction<{ type: 'success' | 'error' | 'warning' | 'info'; message: string }>) => {
             state.notification = {
                 show: true,
                 type: action.payload.type,
