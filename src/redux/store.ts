@@ -9,9 +9,11 @@ import {
 } from './slices';
 
 import { baseApi } from './api/baseApi';
+import { productApi } from './api/productApi';
 
 const rootReducer = combineReducers({
     [baseApi.reducerPath]: baseApi.reducer,
+    [productApi.reducerPath]: productApi.reducer,
     cart: cartReducer,
     auth: authReducer,
     wishlist: wishlistReducer,
@@ -25,7 +27,7 @@ export const store = configureStore({
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({
             serializableCheck: false,
-        }).concat(baseApi.middleware),
+        }).concat(baseApi.middleware, productApi.middleware),
     devTools: process.env.NODE_ENV !== 'production',
 });
 
