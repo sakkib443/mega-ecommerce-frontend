@@ -133,17 +133,17 @@ export default function ProductDetailsPage() {
 
             <div className="container mx-auto px-4 py-8">
                 <div className="bg-white rounded-md border border-gray-100 shadow-sm p-6 lg:p-10">
-                    <div className="flex flex-col lg:flex-row gap-10 xl:gap-16">
+                    <div className="flex flex-col lg:flex-row gap-10 xl:gap-14 items-start">
 
                         {/* ══ LEFT: Image Gallery ══ */}
-                        <div className="w-full lg:w-[45%] flex flex-col-reverse md:flex-row gap-4">
+                        <div className="w-full lg:w-[48%] flex flex-col-reverse md:flex-row gap-3 lg:sticky lg:top-24">
                             {/* Thumbnails */}
-                            <div className="flex md:flex-col gap-2 overflow-x-auto md:overflow-y-auto md:max-h-[520px] flex-shrink-0">
+                            <div className="flex md:flex-col gap-2 overflow-x-auto md:overflow-y-auto md:max-h-[480px] flex-shrink-0">
                                 {images.map((img, idx) => (
                                     <button
                                         key={idx}
                                         onClick={() => setSelectedImage(idx)}
-                                        className={`w-16 h-16 md:w-20 md:h-20 flex-shrink-0 border-2 rounded-md overflow-hidden transition-all ${selectedImage === idx ? 'border-[#00B207] shadow-sm' : 'border-gray-100 hover:border-gray-300'}`}
+                                        className={`w-14 h-14 md:w-[72px] md:h-[72px] flex-shrink-0 border-2 rounded-md overflow-hidden transition-all ${selectedImage === idx ? 'border-[#00B207] shadow-sm' : 'border-gray-100 hover:border-gray-300'}`}
                                     >
                                         <img src={img} alt={`view ${idx + 1}`} className="w-full h-full object-cover"
                                             onError={(e) => { (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1560393464-5c69a73c5770?q=80&w=200'; }} />
@@ -152,7 +152,7 @@ export default function ProductDetailsPage() {
                             </div>
 
                             {/* Main Image */}
-                            <div className="flex-1 relative border border-gray-100 rounded-md overflow-hidden bg-white aspect-square flex items-center justify-center">
+                            <div className="flex-1 relative border border-gray-100 rounded-md overflow-hidden bg-white aspect-square flex items-center justify-center min-h-[340px] md:min-h-[440px]">
                                 {discountPct > 0 && (
                                     <span className="absolute top-3 left-3 bg-[#EA4335] text-white text-[10px] font-black px-2.5 py-1 rounded-md uppercase tracking-wider z-10">
                                         -{discountPct}%
@@ -166,14 +166,14 @@ export default function ProductDetailsPage() {
                                 <img
                                     src={images[selectedImage] || product.thumbnail}
                                     alt={product.name}
-                                    className="w-full h-full object-contain p-6 transition-all duration-300"
+                                    className="w-full h-full object-contain p-4 transition-all duration-300"
                                     onError={(e) => { (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1560393464-5c69a73c5770?q=80&w=800'; }}
                                 />
                             </div>
                         </div>
 
                         {/* ══ RIGHT: Product Info ══ */}
-                        <div className="flex-1 flex flex-col gap-5">
+                        <div className="flex-1 flex flex-col gap-5 min-w-0">
 
                             {/* Category badge */}
                             <div className="flex items-center gap-2 flex-wrap">
