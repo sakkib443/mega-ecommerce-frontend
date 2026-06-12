@@ -71,7 +71,7 @@ export default function SettingsPage() {
                                         <label className="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
                                         <input
                                             type="tel"
-                                            defaultValue="+880 1234 567 890"
+                                            defaultValue="01711946614"
                                             className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-[#5CAF90]"
                                         />
                                     </div>

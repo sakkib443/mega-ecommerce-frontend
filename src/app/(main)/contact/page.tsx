@@ -47,7 +47,7 @@ export default function ContactPage() {
         {
             icon: <FiPhone size={22} />,
             title: "Phone Number",
-            details: "+1 (234) 567-890",
+            details: "01711946614",
             color: "text-emerald-600 bg-emerald-50"
         },
         {

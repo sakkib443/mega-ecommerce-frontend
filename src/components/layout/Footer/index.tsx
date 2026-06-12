@@ -118,7 +118,7 @@ const Footer: React.FC = () => {
                             </li>
                             <li className="flex gap-4">
                                 <AiOutlinePhone className="text-[var(--color-primary)] flex-shrink-0" size={24} />
-                                <span className="text-sm">+880 1234 567 890</span>
+                                <a href="tel:01711946614" className="text-sm hover:text-[var(--color-primary)] transition-all">01711946614</a>
                             </li>
                             <li className="flex gap-4">
                                 <AiOutlineMail className="text-[var(--color-primary)] flex-shrink-0" size={24} />

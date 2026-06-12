@@ -12,11 +12,11 @@ const TopHeader: React.FC = () => {
                 <div className="flex items-center gap-6">
                     <div className="flex items-center gap-2 text-[13px] text-gray-600">
                         <FiPhone className="text-[var(--color-primary)]" size={14} />
-                        <a href="tel:01753923093" className="hover:text-[var(--color-primary)] transition-all">01753923093</a>
+                        <a href="tel:01711946614" className="hover:text-[var(--color-primary)] transition-all">01711946614</a>
                     </div>
                     <div className="flex items-center gap-2 text-[13px] text-gray-600">
                         <BsWhatsapp className="text-[var(--color-primary)]" size={14} />
-                        <a href="https://wa.me/01322840808" className="hover:text-[var(--color-primary)] transition-all">01322840808</a>
+                        <a href="https://wa.me/8801711946614" className="hover:text-[var(--color-primary)] transition-all">01711946614</a>
                     </div>
                 </div>
 

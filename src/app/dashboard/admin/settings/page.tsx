@@ -82,8 +82,8 @@ export default function SettingsPage() {
 
         // Contact
         email: 'support@megashop.com',
-        phone: '+880 1712 345 678',
-        whatsapp: '+880 1712 345 678',
+        phone: '01711946614',
+        whatsapp: '01711946614',
         address: 'House 12, Road 5, Dhanmondi, Dhaka 1205, Bangladesh',
 
         // Currency
