@@ -14,7 +14,7 @@ const NewProducts: React.FC = () => {
         name: p.name,
         image: p.thumbnail,
         price: p.price,
-        mrp: p.comparePrice,
+        mrp: p.originalPrice,
         rating: p.rating || 0,
         reviews: p.reviewCount || 0,
         categoryName: p.category?.name,
