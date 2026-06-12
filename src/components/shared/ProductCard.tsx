@@ -9,7 +9,7 @@ import { addToCart } from '@/redux/slices/cartSlice';
 import { addToWishlist } from '@/redux/slices/wishlistSlice';
 
 interface Product {
-    id: number;
+    id: string | number;
     name: string;
     image: string;
     price: number;
